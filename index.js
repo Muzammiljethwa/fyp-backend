@@ -1,6 +1,17 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 
+const {
+    Connection,
+    Keypair,
+    LAMPORTS_PER_SOL,
+    PublicKey,
+    SystemProgram,
+    Transaction,
+    clusterApiUrl,
+    sendAndConfirmTransaction,
+  } = require("@solana/web3.js");
+
 const app = express();
 const port = 3000; // Choose any port you prefer
 
@@ -8,18 +19,18 @@ const port = 3000; // Choose any port you prefer
 async function sendSol(amount, recipientPublicKey) {
 
     // Build connection
-    const {
-        Connection,
-        Keypair,
-        LAMPORTS_PER_SOL,
-        PublicKey,
-        SystemProgram,
-        Transaction,
-        clusterApiUrl,
-        sendAndConfirmTransaction,
-      } = require("@solana/web3.js");
+    // const {
+    //     Connection,
+    //     Keypair,
+    //     LAMPORTS_PER_SOL,
+    //     PublicKey,
+    //     SystemProgram,
+    //     Transaction,
+    //     clusterApiUrl,
+    //     sendAndConfirmTransaction,
+    //   } = require("@solana/web3.js");
 
-    const fs = require("fs");
+    // const fs = require("fs");
     
     // const secret = JSON.parse(fs.readFileSync("escrow.json").toString());
     const secret = [
